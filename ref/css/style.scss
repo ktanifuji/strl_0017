@@ -1,0 +1,327 @@
+@import "compass";
+@import "compass/reset/";
+
+a {
+  text-decoration: none;
+  color: #97adff;
+}
+a:hover {
+  color: #4c6dff;
+}
+a:visited {
+  color: #97adff;
+}
+.ir {
+  border: 0;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  background-color: transparent;
+}
+
+h2,h3 {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == pc-table {
+    @media ( max-width: 922px ) { @content; }
+  }
+  @else if $breakpoint == pc-min {
+    @media ( max-width: 780px ) { @content; }
+  }
+  @else if $breakpoint == smartphone {
+    @media ( max-width: 600px ) { @content; }
+  }
+}
+
+/* body ---------------------------------------------
+--------------------------------*/
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'メイリオ',Meiryo,'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','ＭＳ Ｐゴシック',sans-serif;
+  font-size: 1em;
+  color: #333;
+  background-color: #fff;
+}
+
+/* wrapper --------------------------------------------- 
+--------------------------------*/
+
+#wrapper{
+  margin: 0 auto;
+  min-width: 600px;
+}
+
+
+/* header ---------------------------------------------
+--------------------------------*/
+
+header{
+  width: 100%;
+  height: 25px;
+  padding: 15px;
+  background-color: rgba(255,255,255,0.9);
+  position: fixed;
+  z-index: 10;
+  h1{
+    float: left;
+    a {
+      width: (320px / 2);
+      height: (48px / 2);
+      background-image: url(../images/fig_strlogo.png);
+      background-size: 100% auto;
+      display: block;
+    }
+  }
+}
+
+/* visual ---------------------------------------------
+--------------------------------*/
+
+$charactor-edit-top: 70px;
+$charactor-edit-left: 0;
+
+#charactor{
+  height: 570px;
+  width: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.charactor-red{
+  width: 486px;
+  height: 500px;
+  background-image: url("../images/fig_charactor_red.png");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0 + $charactor-edit-top;
+  left: 0 + $charactor-edit-left;
+}
+.charactor-blue{
+  width: 486px;
+  height: 500px;
+  background-image: url("../images/fig_charactor_blue.png");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0 + $charactor-edit-top;
+  left: 0 + $charactor-edit-left;
+}
+.charactor-yellow{
+  width: 486px;
+  height: 500px;
+  background-image: url("../images/fig_charactor_yellow.png");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0 + $charactor-edit-top;
+  left: 0 + $charactor-edit-left;
+}
+
+/* content ---------------------------------------------
+--------------------------------*/
+
+#wrapper {
+}
+
+.content-bg {
+  &.content-bg-header {
+    height: 570px;
+    background-image: url(../images/bg_header.jpg);
+    background-repeat: no-repeat;
+    background-position-x: center;
+  }
+  &.content-bg-introduction {
+    background-image: url(../images/bg_introduction.jpg);
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
+  &.content-bg-yellow {
+    background-color: #fcff5c;
+  }
+  &.content-bg-red {
+    background-color: #c85f9a;
+  }
+  &.content-bg-blue {
+    background-color: #8680d8;
+  }
+}
+
+.content-charactor {
+  margin: 0 auto;
+  width: 960px;
+  height: 600px;
+  background-repeat: no-repeat;
+  background-position: center top;
+  &.content-charactor-yellow {
+    background-image: url(../images/fig_charactor_yellow_l.png);
+    background-position: left bottom;
+  }
+  &.content-charactor-red {
+    background-image: url(../images/fig_charactor_red_l.png);
+    background-position: right bottom;
+  }
+  &.content-charactor-blue {
+    background-image: url(../images/fig_charactor_blue_l.png);
+    background-position: left bottom;
+  }
+}
+
+.content {
+  position: relative;
+  &.title {
+    padding: 55px 0 50px 0;
+    text-align: center;
+    h2 {
+      margin: 0 0 40px 0;
+    }
+    h3 {
+      margin: 0 0 12px 0;
+    }
+    p {
+      margin: 0;
+      font-weight: bold;
+      font-size: 0.8em;
+      line-height: 1.5em;
+    }
+  }
+  &.introduction {
+    padding: 30px 0;
+    text-align: center;
+  }
+}
+
+.box {
+  padding: 20px;
+  max-width: 480px;
+  background-color: #FFF;
+  display: inline-block;
+  @include border-radius(6px, 6px);
+  opacity: 0.9;
+  position: absolute;
+  &.box-information {
+    top: 70px;
+    right: 30px;
+    table {
+      th {
+        padding: 4px 10px 10px 0;
+        font-size: 0.8em;
+        font-style: italic;
+        color: #ea00b3;
+      }
+      td {
+        padding: 0 10px 10px 0;
+        font-size: 0.8em;
+        line-height: 1.6em;
+        span {
+          font-size: 0.9em;
+        }
+      }
+    }
+    .jacket {
+      padding: 10px;
+      border: 1px solid #DDD;
+    }
+    #sns {
+      margin: 0 0 10px 0;
+      ul{
+        width: 230px;
+        li{
+          display: inline;
+          margin: 0 5px 0 0;
+        }
+      }
+    }
+  }
+  &.box-tracklist {
+    top: 85px;
+    left: 30px;
+    table {
+      th {
+        padding: 6px 5px 10px 0;
+        font-size: 1.2em;
+        font-style: italic;
+        color: #ea00b3;
+      }
+      td {
+        padding: 0 10px 0 0;
+        font-size: 0.9em;
+        vertical-align: middle;
+        &:nth-child(2) {
+          color: #333;
+          font-weight: bold;
+        }
+        &:nth-child(3) {
+          color: #666;
+        }
+      }
+    }
+  }
+  &.box-credit {
+    top: 100px;
+    right: 30px;
+    width: 450px;
+    table {
+      th {
+        padding: 2px 15px 10px 0;
+        font-size: 0.9em;
+        vertical-align: top;
+        color: #ea00b3;
+      }
+      td {
+        padding: 0 10px 10px 0;
+        font-size: 0.8em;
+        line-height: 1.6em;
+        span {
+          font-weight: bold;
+          font-size: 1.1em;
+        }
+      }
+    }
+  }
+}
+
+table {
+  th {
+    text-align: left;
+    vertical-align: top;
+  }
+}
+
+h3 {
+  font-size: 1.6em;
+  margin: 0 0 15px 0;
+}
+
+/* footer ---------------------------------------------
+--------------------------------*/
+
+footer {
+  margin: 20px 0;
+}
+
+.back {
+  width: 260px;
+  margin: 0 auto;
+  cursor: auto;
+  overflow: hidden;
+  clear: both;
+  a {
+    &.logo-strlabel {
+      float: left;
+    }
+    &.logo-soundspringer {
+      float: right;
+    }
+  }
+}
+
+.banner {
+  margin: 20px auto 0 auto;
+  width: 468px;
+}
